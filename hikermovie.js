@@ -170,7 +170,7 @@ function hikhmrule() {
             if (md.length > 5) {
                 return 'hiker://home@资源网采集.xyq';
             } else {
-                let rule = request('https://raw.githubusercontent.com/xyq254245/HikerRule/main/资源网采集口令.txt', {});
+                let rule = request('https://raw.githubusercontent.com/npcrule/HikerRule/main/资源网采集口令.txt', {});
                 return rule
             }
         }),
@@ -253,7 +253,7 @@ function hikhmrule() {
             d.push({
                 title: '导入去广告规则文件',
                 url: "confirm://确认导入m3u8去广告规则文件？.js:" + $.toString(() => {
-                    return '海阔视界，本地文件￥file_url￥hiker://files/rules/m3u8_ad_rule.json@https://raw.githubusercontent.com/xyq254245/HikerRule/main/m3u8_ad_rule.json'
+                    return '海阔视界，本地文件￥file_url￥hiker://files/rules/m3u8_ad_rule.json@https://raw.githubusercontent.com/npcrule/HikerRule/main/m3u8_ad_rule.json'
                 }),
                 desc: '导入m3u8去广告规则文件，会覆盖已存在的，注意备份。',
                 col_type: 'text_center_1'
@@ -261,20 +261,20 @@ function hikhmrule() {
             d.push({
                 title: '更新规则核心文件',
                 url: $('').lazyRule(() => {
-                    var rulejs = fetch('https://raw.githubusercontent.com/xyq254245/HikerRule/main/hikermovie.js', {
+                    var rulejs = fetch('https://raw.githubusercontent.com/npcrule/HikerRule/main/hikermovie.js', {
                         dns: "https://dns.alidns.com/dns-query"
                     });
                     if (rulejs.search(/lazyRule/) == -1) {
-                        rulejs = fetch('https://raw.githubusercontent.com/xyq254245/HikerRule/main/hikermovie.js', {});
+                        rulejs = fetch('https://raw.githubusercontent.com/npcrule/HikerRule/main/hikermovie.js', {});
                     }
                     if (rulejs.search(/lazyRule/) != -1) {
                         writeFile("hiker://files/rules/xyq/hikermovie.js", rulejs);
                     }
-                    var rulejson = fetch('https://raw.githubusercontent.com/xyq254245/HikerRule/main/hikermovie.json', {
+                    var rulejson = fetch('https://raw.githubusercontent.com/npcrule/HikerRule/main/hikermovie.json', {
                         dns: "https://dns.alidns.com/dns-query"
                     });
                     if (rulejson.search(/\"vodhref\"/) == -1) {
-                        rulejson = fetch('https://raw.githubusercontent.com/xyq254245/HikerRule/main/hikermovie.json', {});
+                        rulejson = fetch('https://raw.githubusercontent.com/npcrule/HikerRule/main/hikermovie.json', {});
                     }
                     if (rulejson.search(/\"vodhref\"/) != -1) {
                         writeFile("hiker://files/rules/xyq/hikermovie.json", rulejson);
@@ -304,7 +304,7 @@ function hikhmrule() {
                 title: '↓TVBox规则订阅地址(点击可复制)↓',
                 col_type: 'text_center_1'
             });
-            let dingyue='https://gh.jasonzeng.dev/https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json';
+            let dingyue='https://gh.jasonzeng.dev/https://raw.githubusercontent.com/npcrule/xyqonlinerule/main/XYQTVBox.json';
             d.push({
                 title: dingyue,
                 url: 'copy://'+dingyue,
@@ -3021,7 +3021,7 @@ function omerj() {
         let check = fetch("hiker://home@XYQ推送");
         if (!check || check.length <= 5) {
             let ru = $.toString(() => {
-                return "海阔视界，XYQ推送￥home_rule_url￥https://raw.githubusercontent.com/xyq254245/HikerRule/main/XYQ%e6%8e%a8%e9%80%81.json"
+                return "海阔视界，XYQ推送￥home_rule_url￥https://raw.githubusercontent.com/npcrule/HikerRule/main/XYQ%e6%8e%a8%e9%80%81.json"
             });
             confirm({
                 title: MY_RULE.title + '提示',
